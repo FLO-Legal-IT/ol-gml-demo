@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Demo GML</title>
+</head>
+<style>
+    body {
+        padding: 1em 3em;
+    }
+
+    .container {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        gap: 2em;
+    }
+
+    .map-container {
+        width: 100%;
+        height: 80vh;
+    }
+
+    .map {
+        width: 100%;
+        height: 100%;
+    }
+</style>
+<body>
+<h1>Demo GML</h1>
+<div class="container">
+    <div class="map-container">
+        <h2>GeoJSON</h2>
+        <div id="map_geojson" class="map"></div>
+    </div>
+    <div class="map-container">
+        <h2>GML</h2>
+        <div id="map_gml" class="map"></div>
+    </div>
+    <div class="map-container">
+        <h2>GML -> GeoJSON</h2>
+        <div id="map_gml_to_geojson" class="map"></div>
+    </div>
+</div>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
