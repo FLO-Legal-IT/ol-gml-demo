@@ -7,7 +7,10 @@ It doesn't show in Qgis either. I tried to use the featureNS and featureType opt
 
 I Qgis, I made a conversion from `sportterreinen-1.gml` to geojson (see `sportterreinen.json`). This geojson file displays correctly in open layers.
 
-Then I made `sportterreinen-1.gml` version in which I only changed the name of the Surface element to Polygon and remove some of the interior element below the Surface element. All features where parsed and even the extent of the layer could be computed correctly. The feature would not be shown however, it ended with error message `geometryRenderer is not a function`
+Then I made `sportterreinen-2.gml` version in which I only changed the name of the Surface element to Polygon and remove some of the interior element below the Surface element. All features where parsed and even the extent of the layer could be computed correctly. The feature would not be shown however, it ended with error message `geometryRenderer is not a function`
+
+`sportterreinen-1` failed in this [gml 3.2 validator](alidatie.geostandaarden.nl/etf-webapp/testruns/create-direct?testProjectId=8089ca7a-8722-3119-9ec9-661205a743f4) with the message " Geometry coordinates shall only be specified using the gml:posList element for gml:LinearRing."
+So i made version sportterreinen-3 in which I replaced <<gml:coordinates> by <gml:posList>. That file validates in the aforementioned validator, but it does not work in open layers either.
 
 # Convert gml to gejson.
 A solution could be to convert gml to geojson on the fly. I found `https://www.npmjs.com/package/gml2geojson`, but it doesn't work with any of the abovementioned examples.
